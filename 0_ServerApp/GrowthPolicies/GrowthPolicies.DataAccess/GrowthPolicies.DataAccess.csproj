@@ -65,6 +65,7 @@
     <Compile Include="Repositories\PolicyRepository.cs" />
     <Compile Include="Repositories\CoverageRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="UnityOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\GrowthPolicies.Models\GrowthPolicies.Models.csproj">
       <Project>{CB85D9E8-5200-4ECE-A7CC-415DFD9EFA25}</Project>
       <Name>GrowthPolicies.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GrowthPolicies.Repositories\GrowthPolicies.Repositories.csproj">
+      <Project>{F24EEB92-C8FA-42AD-98E8-E333FB2C2ED6}</Project>
+      <Name>GrowthPolicies.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

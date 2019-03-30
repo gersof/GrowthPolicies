@@ -1,12 +1,22 @@
-﻿using System;
+﻿using GrowthPolicies.Models.PolicesModels;
+using GrowthPolicies.Repositories;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GrowthPolicies.DataAccess.Repositories
 {
-    class UserRepository
+    public class RiskRepository : IRiskRepository
     {
+        private readonly ApplicationDbContext _context;
+
+        public RiskRepository(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public IEnumerable<RiskModel> GetRisks()
+        {
+            return _context.Risks.ToList();
+        }
     }
 }
