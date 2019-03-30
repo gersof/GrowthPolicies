@@ -58,7 +58,10 @@
     <Compile Include="AccountModels\ChangePasswordModel.cs" />
     <Compile Include="AccountModels\RegisterModel.cs" />
     <Compile Include="AccountModels\SetPasswordModel.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="PolicesModels\CoverageModel.cs" />
+    <Compile Include="PolicesModels\PolicyModel.cs" />
+    <Compile Include="PolicesModels\RiskModel.cs" />
+    <Compile Include="PolicesModels\UserPolicyModel.cs" />
     <Compile Include="TextMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
