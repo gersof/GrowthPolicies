@@ -2,6 +2,9 @@
 
 namespace GrowthPolicies.DTO
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class UserPolicyResponseDTO
     {
         public string Name { get; set; }
