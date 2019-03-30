@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GrowthPolicies.Models.PolicesModels
 {
     /// <summary>
     /// 
     /// </summary>
+    [Table("Policies")]
     public class PolicyModel
     {
         public int Id { get; set; }

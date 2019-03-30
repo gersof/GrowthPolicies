@@ -59,13 +59,21 @@
     <Compile Include="Configuration\PolicyConfiguration.cs" />
     <Compile Include="Configuration\RiskConfiguration.cs" />
     <Compile Include="Configuration\UserPolicyConfiguration.cs" />
-    <Compile Include="Migrations\201903302152494_InitialCreate.cs" />
-    <Compile Include="Migrations\201903302152494_InitialCreate.Designer.cs">
-      <DependentUpon>201903302152494_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201903302257575_InitialCreate.cs" />
+    <Compile Include="Migrations\201903302257575_InitialCreate.Designer.cs">
+      <DependentUpon>201903302257575_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903302218226_FillCoverageTable.cs" />
-    <Compile Include="Migrations\201903302218226_FillCoverageTable.Designer.cs">
-      <DependentUpon>201903302218226_FillCoverageTable.cs</DependentUpon>
+    <Compile Include="Migrations\201903302308117_FillCoverageTable.cs" />
+    <Compile Include="Migrations\201903302308117_FillCoverageTable.Designer.cs">
+      <DependentUpon>201903302308117_FillCoverageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903302311380_FillRiskTable.cs" />
+    <Compile Include="Migrations\201903302311380_FillRiskTable.Designer.cs">
+      <DependentUpon>201903302311380_FillRiskTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903302324591_FillAddRolesAndUsers.cs" />
+    <Compile Include="Migrations\201903302324591_FillAddRolesAndUsers.Designer.cs">
+      <DependentUpon>201903302324591_FillAddRolesAndUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,11 +103,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903302152494_InitialCreate.resx">
-      <DependentUpon>201903302152494_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903302257575_InitialCreate.resx">
+      <DependentUpon>201903302257575_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903302218226_FillCoverageTable.resx">
-      <DependentUpon>201903302218226_FillCoverageTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903302308117_FillCoverageTable.resx">
+      <DependentUpon>201903302308117_FillCoverageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903302311380_FillRiskTable.resx">
+      <DependentUpon>201903302311380_FillRiskTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903302324591_FillAddRolesAndUsers.resx">
+      <DependentUpon>201903302324591_FillAddRolesAndUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace GrowthPolicies.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class FillRiskTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FillRiskTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903302152494_InitialCreate"; }
+            get { return "201903302311380_FillRiskTable"; }
         }
         
         string IMigrationMetadata.Source

@@ -8,7 +8,7 @@ namespace GrowthPolicies.DataAccess.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.CoverageModels",
+                "dbo.Coverages",
                 c => new
                     {
                         Id = c.Byte(nullable: false),
@@ -18,7 +18,7 @@ namespace GrowthPolicies.DataAccess.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.PolicyModels",
+                "dbo.Policies",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -31,13 +31,13 @@ namespace GrowthPolicies.DataAccess.Migrations
                         RiskId = c.Byte(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.CoverageModels", t => t.CoverageId, cascadeDelete: true)
-                .ForeignKey("dbo.RiskModels", t => t.RiskId, cascadeDelete: true)
+                .ForeignKey("dbo.Coverages", t => t.CoverageId, cascadeDelete: true)
+                .ForeignKey("dbo.Risks", t => t.RiskId, cascadeDelete: true)
                 .Index(t => t.CoverageId)
                 .Index(t => t.RiskId);
             
             CreateTable(
-                "dbo.RiskModels",
+                "dbo.Risks",
                 c => new
                     {
                         Id = c.Byte(nullable: false),
@@ -69,7 +69,7 @@ namespace GrowthPolicies.DataAccess.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.UserPolicyModels",
+                "dbo.UserPolicies",
                 c => new
                     {
                         PolicyId = c.Int(nullable: false),
@@ -77,7 +77,7 @@ namespace GrowthPolicies.DataAccess.Migrations
                     })
                 .PrimaryKey(t => new { t.PolicyId, t.InsuredId })
                 .ForeignKey("dbo.AspNetUsers", t => t.InsuredId, cascadeDelete: true)
-                .ForeignKey("dbo.PolicyModels", t => t.PolicyId, cascadeDelete: true)
+                .ForeignKey("dbo.Policies", t => t.PolicyId, cascadeDelete: true)
                 .Index(t => t.PolicyId)
                 .Index(t => t.InsuredId);
             
@@ -130,33 +130,33 @@ namespace GrowthPolicies.DataAccess.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserPolicyModels", "PolicyId", "dbo.PolicyModels");
-            DropForeignKey("dbo.UserPolicyModels", "InsuredId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.UserPolicies", "PolicyId", "dbo.Policies");
+            DropForeignKey("dbo.UserPolicies", "InsuredId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.PolicyModels", "RiskId", "dbo.RiskModels");
-            DropForeignKey("dbo.PolicyModels", "CoverageId", "dbo.CoverageModels");
+            DropForeignKey("dbo.Policies", "RiskId", "dbo.Risks");
+            DropForeignKey("dbo.Policies", "CoverageId", "dbo.Coverages");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.UserPolicyModels", new[] { "InsuredId" });
-            DropIndex("dbo.UserPolicyModels", new[] { "PolicyId" });
+            DropIndex("dbo.UserPolicies", new[] { "InsuredId" });
+            DropIndex("dbo.UserPolicies", new[] { "PolicyId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.PolicyModels", new[] { "RiskId" });
-            DropIndex("dbo.PolicyModels", new[] { "CoverageId" });
+            DropIndex("dbo.Policies", new[] { "RiskId" });
+            DropIndex("dbo.Policies", new[] { "CoverageId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.UserPolicyModels");
+            DropTable("dbo.UserPolicies");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.RiskModels");
-            DropTable("dbo.PolicyModels");
-            DropTable("dbo.CoverageModels");
+            DropTable("dbo.Risks");
+            DropTable("dbo.Policies");
+            DropTable("dbo.Coverages");
         }
     }
 }
