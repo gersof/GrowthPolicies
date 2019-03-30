@@ -59,6 +59,15 @@
     <Compile Include="Configuration\PolicyConfiguration.cs" />
     <Compile Include="Configuration\RiskConfiguration.cs" />
     <Compile Include="Configuration\UserPolicyConfiguration.cs" />
+    <Compile Include="Migrations\201903302152494_InitialCreate.cs" />
+    <Compile Include="Migrations\201903302152494_InitialCreate.Designer.cs">
+      <DependentUpon>201903302152494_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903302218226_FillCoverageTable.cs" />
+    <Compile Include="Migrations\201903302218226_FillCoverageTable.Designer.cs">
+      <DependentUpon>201903302218226_FillCoverageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RiskRepository.cs" />
     <Compile Include="Repositories\UserPolicyRepository.cs" />
@@ -85,6 +94,13 @@
       <Name>GrowthPolicies.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903302152494_InitialCreate.resx">
+      <DependentUpon>201903302152494_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903302218226_FillCoverageTable.resx">
+      <DependentUpon>201903302218226_FillCoverageTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
