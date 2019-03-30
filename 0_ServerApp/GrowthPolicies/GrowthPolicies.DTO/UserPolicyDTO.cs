@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrowthPolicies.Repositories
+namespace GrowthPolicies.DTO
 {
     /// <summary>
     /// 
     /// </summary>
-    public interface IUserPolicyRepository
+    public class UserPolicyDTO
     {
+        public int[] PolicyIds { get; set; }
+        public string UserId { get; set; }
     }
 }

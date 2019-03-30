@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GrowthPolicies.Repositories
 {
-    class IRiskRepository
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IRiskRepository
     {
     }
 }

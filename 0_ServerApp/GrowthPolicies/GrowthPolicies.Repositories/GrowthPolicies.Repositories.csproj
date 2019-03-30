@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICoverageRepository.cs" />
+    <Compile Include="IPolicyRepository.cs" />
+    <Compile Include="IRiskRepository.cs" />
+    <Compile Include="IUserPolicyRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

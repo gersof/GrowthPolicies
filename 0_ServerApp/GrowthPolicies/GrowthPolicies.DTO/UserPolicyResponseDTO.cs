@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrowthPolicies.DTO
 {
-    public class Class1
+    public class UserPolicyResponseDTO
     {
     }
 }

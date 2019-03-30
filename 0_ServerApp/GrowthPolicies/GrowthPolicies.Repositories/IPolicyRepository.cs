@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace GrowthPolicies.Repositories
 {
-    class IPolicyRepository
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IPolicyRepository
     {
+        PolicyDTO GetPolicy(int policyId);
+        string AddPolicy(Policy policy);
+        string UpdatePolicy(int id, Policy policy);
+        string DeletePolicy(int id);
+        IEnumerable<PolicyDto> GetPolicies();
+        bool CheckIfRiskIsHigh(byte riskId);
+        bool CheckCoveragePercentOver50(byte coverageId);
     }
 }

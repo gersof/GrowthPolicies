@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GrowthPolicies.Repositories
 {
-    class IUserRepository
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IUserRepository
     {
     }
 }
