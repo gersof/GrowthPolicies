@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrowthPolicies.DataAccess
 {
-    public class Class1
+    public class ApplicationDbContext
     {
     }
 }
