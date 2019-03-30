@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GrowthPolicies.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GrowthPolicies.Models.PolicesModels;
 
 namespace GrowthPolicies.Repositories
 {
@@ -12,10 +14,10 @@ namespace GrowthPolicies.Repositories
     public interface IPolicyRepository
     {
         PolicyDTO GetPolicy(int policyId);
-        string AddPolicy(Policy policy);
-        string UpdatePolicy(int id, Policy policy);
+        string AddPolicy(PolicyModel policy);
+        string UpdatePolicy(int id, PolicyModel policy);
         string DeletePolicy(int id);
-        IEnumerable<PolicyDto> GetPolicies();
+        IEnumerable<PolicyDTO> GetPolicies();
         bool CheckIfRiskIsHigh(byte riskId);
         bool CheckCoveragePercentOver50(byte coverageId);
     }

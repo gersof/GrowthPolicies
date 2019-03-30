@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GrowthPolicies.DTO\GrowthPolicies.DTO.csproj">
+      <Project>{81CAFF67-CA64-4A20-A482-9588448AAA83}</Project>
+      <Name>GrowthPolicies.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GrowthPolicies.Models\GrowthPolicies.Models.csproj">
       <Project>{cb85d9e8-5200-4ece-a7cc-415dfd9efa25}</Project>
       <Name>GrowthPolicies.Models</Name>
