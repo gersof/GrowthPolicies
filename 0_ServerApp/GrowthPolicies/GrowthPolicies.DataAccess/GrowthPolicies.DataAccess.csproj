@@ -72,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GrowthPolicies.DTO\GrowthPolicies.DTO.csproj">
+      <Project>{81CAFF67-CA64-4A20-A482-9588448AAA83}</Project>
+      <Name>GrowthPolicies.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GrowthPolicies.Models\GrowthPolicies.Models.csproj">
       <Project>{CB85D9E8-5200-4ECE-A7CC-415DFD9EFA25}</Project>
       <Name>GrowthPolicies.Models</Name>
