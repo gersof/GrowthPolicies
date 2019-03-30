@@ -2,6 +2,9 @@
 
 namespace GrowthPolicies.Models.PolicesModels
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class RiskModel
     {
         public byte Id { get; set; }

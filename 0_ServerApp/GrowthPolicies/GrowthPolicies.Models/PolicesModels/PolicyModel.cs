@@ -2,6 +2,9 @@
 
 namespace GrowthPolicies.Models.PolicesModels
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PolicyModel
     {
         public int Id { get; set; }
