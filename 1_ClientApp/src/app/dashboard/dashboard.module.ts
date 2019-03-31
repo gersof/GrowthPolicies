@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from '../pages/home/home.component';
 import { ClientsComponent } from '../pages/clients/clients.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     ],
   declarations: [
       HomeComponent, 
-      ClientsComponent
+      ClientsComponent,
+      DashboardComponent
   ],
    providers: [],
 
