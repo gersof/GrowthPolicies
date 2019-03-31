@@ -9,10 +9,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using GrowthPolicies.API.Models;
+using GrowthPolicies.Models.AccountModels;
+using System.Web.Http.Cors;
 
 namespace GrowthPolicies.API.Providers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
@@ -29,13 +31,14 @@ namespace GrowthPolicies.API.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "http://localhost:4200" });
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {
-                context.SetError("invalid_grant", "The user name or password is incorrect.");
+                context.SetError("invalid_grant", "El nombre de usuario o la contraseña no son correctos.");
                 return;
             }
 
@@ -43,8 +46,9 @@ namespace GrowthPolicies.API.Providers
                OAuthDefaults.AuthenticationType);
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
+            List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+            AuthenticationProperties properties = CreateProperties(user.UserName, user.Id, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -62,7 +66,7 @@ namespace GrowthPolicies.API.Providers
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            // Resource owner password credentials does not provide a client ID.
+            // La credenciales de la contraseña del propietario del recurso no proporcionan un id. de cliente.
             if (context.ClientId == null)
             {
                 context.Validated();
@@ -86,11 +90,13 @@ namespace GrowthPolicies.API.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        public static AuthenticationProperties CreateProperties(string userName, string userId, string roles)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", userName }
+                { "userName", userName },
+                { "userId", userId },
+                {"roles", roles}
             };
             return new AuthenticationProperties(data);
         }

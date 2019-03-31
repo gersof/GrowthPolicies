@@ -9,7 +9,7 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using GrowthPolicies.API.Providers;
-using GrowthPolicies.API.Models;
+using GrowthPolicies.DataAccess;
 
 namespace GrowthPolicies.API
 {
