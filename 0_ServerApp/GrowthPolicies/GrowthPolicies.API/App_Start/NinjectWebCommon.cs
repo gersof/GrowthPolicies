@@ -10,13 +10,15 @@ namespace GrowthPolicies.API.App_Start
     using Ninject.Extensions.Conventions;
     using Ninject.Web.Common;
     using System;
+    using System.Collections.Generic;
+    using System.Reflection;
     using System.Web;
 
 
     public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
-        
+
         public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
@@ -45,12 +47,49 @@ namespace GrowthPolicies.API.App_Start
                         .SelectAllClasses()
                         .BindDefaultInterface();
                 });
+
+                kernel.Bind(x =>
+                {
+                    x.From("GrowthPolicies.Repositories, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")
+                        .SelectAllTypes()
+                        .Join.FromThisAssembly().SelectAllClasses()
+                        .BindDefaultInterface();
+                });
+                kernel.Bind(x =>
+                    {
+                        x.From("GrowthPolicies.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")
+                        .SelectAllTypes()
+                        .Join.FromThisAssembly().SelectAllClasses()
+                        .BindDefaultInterface();
+                    });
+                kernel.Bind(x =>
+                        {
+                            x.From("GrowthPolicies.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")
+                        .SelectAllTypes()
+                      .Join.FromThisAssembly().SelectAllClasses()
+                        .BindDefaultInterface();
+                        });
+                kernel.Bind(x =>
+                            {
+                                x.From("GrowthPolicies.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")
+                        .SelectAllTypes()
+                        .Join.FromThisAssembly().SelectAllClasses()
+                        .BindDefaultInterface();
+                            });
+                kernel.Bind(x =>
+                                {
+                                    x.From("GrowthPolicies.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")
+                        .SelectAllTypes()
+                        .Join.FromThisAssembly().SelectAllClasses()
+                        .BindDefaultInterface();
+                                });
+
                 return kernel;
             }
-            catch
+            catch (Exception ex)
             {
                 kernel.Dispose();
-                throw;
+                throw ex;
             }
         }
         private static void RegisterServices(IKernel kernel)

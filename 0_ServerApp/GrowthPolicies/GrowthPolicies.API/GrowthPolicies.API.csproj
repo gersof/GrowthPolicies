@@ -239,7 +239,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoveragesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PoliciesController.cs" />
+    <Compile Include="Controllers\RisksController.cs" />
+    <Compile Include="Controllers\UserPoliciesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -344,9 +349,21 @@
       <Project>{2486C426-FC36-4DA3-B754-E01379FB8910}</Project>
       <Name>GrowthPolicies.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GrowthPolicies.DTO\GrowthPolicies.DTO.csproj">
+      <Project>{81CAFF67-CA64-4A20-A482-9588448AAA83}</Project>
+      <Name>GrowthPolicies.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GrowthPolicies.Models\GrowthPolicies.Models.csproj">
       <Project>{CB85D9E8-5200-4ECE-A7CC-415DFD9EFA25}</Project>
       <Name>GrowthPolicies.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GrowthPolicies.Repositories\GrowthPolicies.Repositories.csproj">
+      <Project>{F24EEB92-C8FA-42AD-98E8-E333FB2C2ED6}</Project>
+      <Name>GrowthPolicies.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GrowthPolicies.ViewModels\GrowthPolicies.ViewModels.csproj">
+      <Project>{F8D94C56-5480-4E93-B4BC-00D3F9DAE628}</Project>
+      <Name>GrowthPolicies.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
