@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
+import { LocaldataService } from 'src/app/services/localdata.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [UsersService]
 })
 export class LoginComponent implements OnInit {
   validateForm: FormGroup;
@@ -16,7 +20,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private _localdata:LocaldataService, private _userserv: UsersService, private router: Router) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -24,5 +28,38 @@ export class LoginComponent implements OnInit {
       password: [null, [Validators.required]],
       remember: [true]
     });
+  }
+
+  tryLogin() {
+    this._userserv.login(this.validateForm.controls['userName'].value, this.validateForm.controls['password'].value).subscribe(
+      r => {
+        console.log(r);
+        if (r.roles.includes('admin')) {
+          r.roles = 'admin';
+        } else {
+          r.roles = 'client';
+        }
+
+        if (r.access_token) {
+          this._localdata.setToken(
+            r.access_token,
+            String(r.expires_in),
+            r.token_type,
+            r.userName,
+            r.userId,
+            r.roles,
+          );
+          const urlDestArr = this.router.url.split('=');
+          let urlDest = r.roles;
+          if (urlDestArr.length > 1) {
+            urlDest = urlDestArr[1].replace(/%2F/gi, '/');
+          }
+          this.router.navigateByUrl("/dashboard/clients");
+        }
+      },
+      r => {
+       alert('error');
+      },
+    );
   }
 }
