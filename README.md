@@ -20,3 +20,4 @@ La prueba NO está 100% terminada, faltaron funcionalidades.
 
 
 
+![Step1](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/1.png)
