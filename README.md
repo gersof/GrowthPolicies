@@ -21,3 +21,16 @@ La prueba NO está 100% terminada, faltaron funcionalidades.
 
 
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/0.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/1.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/2.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/3.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/4.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/5.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/6.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/7.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/8.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/9.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/10.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/11.JPG)
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/12.JPG)
+
