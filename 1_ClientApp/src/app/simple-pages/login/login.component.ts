@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
 import { LocaldataService } from 'src/app/services/localdata.service';
+import { NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private _localdata:LocaldataService, private _userserv: UsersService, private router: Router) { }
+  constructor(private fb: FormBuilder, private _localdata:LocaldataService, private _userserv: UsersService, private router: Router,    private notification: NzNotificationService
+    ) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -33,7 +35,6 @@ export class LoginComponent implements OnInit {
   tryLogin() {
     this._userserv.login(this.validateForm.controls['userName'].value, this.validateForm.controls['password'].value).subscribe(
       r => {
-        console.log(r);
         if (r.roles.includes('admin')) {
           r.roles = 'admin';
         } else {
@@ -58,7 +59,11 @@ export class LoginComponent implements OnInit {
         }
       },
       r => {
-       alert('error');
+        this.notification.create(
+          'error',
+          'Error!',
+          'The user and/or password are invalid!'
+        );
       },
     );
   }

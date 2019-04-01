@@ -46,7 +46,6 @@ export class ClientsComponent implements OnInit {
   }
 
   onDeleteConfirmUser(event) {
-    console.log(event);
     if (window.confirm('Are you sure you want to delete this user?')) {
       this.onDeleteClient(event);
     } else {
