@@ -33,4 +33,4 @@ La prueba NO está 100% terminada, faltaron funcionalidades.
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/10.JPG)
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/11.JPG)
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/12.JPG)
-
+![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/13.JPG)
