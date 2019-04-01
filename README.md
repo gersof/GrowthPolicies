@@ -14,7 +14,7 @@ La prueba NO está 100% terminada, faltaron funcionalidades.
 
 -Manejo correcto de excepciones.
 
--La inyección de dependencias se trató de hacer con Ninject, se creo archivo para el manejo en todas las capas, pero al no funcionar correctamnente y por tiempo se omitió  en controllers.
+-La inyección de dependencias se trató de hacer con Ninject, se creó archivo para el manejo en todas las capas, pero al no funcionar correctamnente y por tiempo se omitió  en controllers.
 
 -Pruebas unitarias quedaron pendientes, al igual las pruebas de integración.
 
