@@ -7,9 +7,9 @@ import { LoginResultModel } from '../interfaces/login-result-model';
   providedIn: 'root'
 })
 export class UsersService {
-
-  constructor(private http: HttpClient) { 
-    
+  url = ''
+  constructor(private http: HttpClient) {
+    this.url = 'http://localhost:49864/api/';
   }
   login(email: string, password: string): Observable<LoginResultModel> {
     var userData =
@@ -24,4 +24,14 @@ export class UsersService {
       { headers: reqHeader },
     );
   }
+
+  register(email: string, password: string,confirmPassword:string): Observable<any> {
+    return this.http.post<any>(this.url + 'Account/Register', {
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+    });
+  }
+
+
 }

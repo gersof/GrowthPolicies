@@ -48,7 +48,7 @@ namespace GrowthPolicies.DataAccess.Repositories
         public bool CheckIfRiskIsHigh(byte riskId)
         {
             var risk = _context.Risks.FirstOrDefault(r => r.Id.Equals(riskId));
-            return (risk != null && risk.Name.ToLower() == "alto");
+            return (risk != null && risk.Name.ToLower() == "hight");
         }
 
 

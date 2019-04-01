@@ -1,3 +1,28 @@
-<p>
-  clients works!
-</p>
+<h1 style="text-align: center;">Clients List</h1>
+
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.Email }}</td>
+      <td>
+        <a> Show Policies </a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="onDeleteConfirmUser(data)">Delete User</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
