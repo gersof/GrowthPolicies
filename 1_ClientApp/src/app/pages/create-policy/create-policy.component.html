@@ -1,0 +1,83 @@
+<form class="ant-advanced-search-form">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="6" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Police Name</nz-form-label>
+        <nz-form-control>
+          <input nz-input [(ngModel)]="policy.Name" [ngModelOptions]="{standalone:
+            true}"/>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="8" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Police Description</nz-form-label>
+        <nz-form-control>
+          <input nz-input [(ngModel)]="policy.Description" [ngModelOptions]="{standalone:
+            true}"/>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="6" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Start Validation</nz-form-label>
+        <nz-form-control>
+          <nz-date-picker  [(ngModel)]="policy.StartValidity" [ngModelOptions]="{standalone:
+            true}"></nz-date-picker>
+
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="8" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Policy Cover Period</nz-form-label>
+        <nz-form-control>
+          <input nz-input type="number"  [(ngModel)]="policy.CoverPeriod" [ngModelOptions]="{standalone:
+            true}"/>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="6" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Policy Price</nz-form-label>
+        <nz-form-control>
+          <input nz-input type="number"  [(ngModel)]="policy.Price" [ngModelOptions]="{standalone:
+            true}"/>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="8" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Policy Coverage</nz-form-label>
+        <nz-form-control>
+          <nz-select style="width: 200px;" [(ngModel)]="policy.CoverageId" [ngModelOptions]="{standalone:
+            true}"  nzAllowClear nzPlaceHolder="Choose">
+            <nz-option nzValue="" nzLabel="None"></nz-option>
+            <nz-option n *ngFor="let coverage of coverages" [nzValue]="coverage.Id" [nzLabel]="coverage.Name+ '/' +coverage.Cover +'%'"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSpan]="8" [style.display]="'block'">
+      <nz-form-item nzFlex>
+        <nz-form-label>Policy Risk</nz-form-label>
+        <nz-form-control>
+          <nz-select style="width: 200px;" nzAllowClear nzPlaceHolder="Choose" [(ngModel)]="policy.RiskId"[ngModelOptions]="{standalone:
+            true}"  (ngModelChange)="onChangeRisk($event)">
+            <nz-option nzValue="" nzLabel="None"></nz-option>
+            <nz-option n *ngFor="let risk of risks" [nzValue]="risk.Id" [nzLabel]="risk.Name"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col [nzSpan]="24" style="text-align: right;">
+      <button nz-button [nzType]="'primary'"  (click)="savePolicy()">Save</button>
+      <button nz-button (click)="resetForm()">Clear</button>
+    </div>
+  </div>
+</form>
+<div class="search-result-list">
+  Search Result List
+</div>
