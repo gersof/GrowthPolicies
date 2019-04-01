@@ -6,6 +6,7 @@ import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { CommonModule } from '@angular/common';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 registerLocaleData(en);
 
@@ -14,6 +15,7 @@ registerLocaleData(en);
 @NgModule({
     declarations: [
         LoginComponent,
+        UserRegisterComponent,
         //  RegisterComponent
     ],
     imports: [
