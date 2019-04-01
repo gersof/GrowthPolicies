@@ -18,17 +18,35 @@ La prueba NO está 100% terminada, faltaron funcionalidades.
 
 -Pruebas unitarias quedaron pendientes, al igual las pruebas de integración.
 
-
-
+## Estas son las capturas de la aplicación
+Este es el formulario para crear un usuario ruta http://localhost:4200/pages/register:
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/0.JPG)
+
+Esta captura muestra el manejo de error con una notificación
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/1.JPG)
+
+Esta captura muestra el mensaje satisfactorio con una notificación
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/2.JPG)
+
+Esta captura muestra la pagina de login con error
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/3.JPG)
+
+Esta captura muestra la pagina de login http://localhost:4200/pages/login
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/4.JPG)
+
+Esta captura muestra la pagina de home http://localhost:4200/dashboard/home
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/5.JPG)
+
+Esta captura muestra la pagina de clients http://localhost:4200/dashboard/clients
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/6.JPG)
+
+Esta captura muestra como se elimina un usuario:
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/7.JPG)
+
+Esta captura muestra como se elimina un usuario y el proceso es exitoso:
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/8.JPG)
+
+Esta captura muestra la pagina de Crear Poliza http://localhost:4200/dashboard/create-policy
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/9.JPG)
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/10.JPG)
 ![Step0](https://raw.githubusercontent.com/gersof/GrowthPolicies/master/Images/11.JPG)
