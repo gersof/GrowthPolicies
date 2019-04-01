@@ -96,36 +96,7 @@ export class CreatePolicyComponent implements OnInit {
 
   editPolicy() {
     this._policy
-    .updatePolicy('Policies', this._localData.getToken(), this.policy)
-    .subscribe(
-      result => {
-        if (result === 'ok') {
-          this.notification.create(
-            'success',
-            'Success!',
-            'Policy was saved'
-          );
-        } else {
-          this.notification.create(
-            'error',
-            'Error!',
-            'Error, please try later!'
-          );
-        }
-      },
-      error => {
-        this.notification.create(
-          'error',
-          'Error!',
-          'Error, please try later!'
-        );
-      },
-    );
-  }
-
-  addPolicy() {
-    this._policy
-      .savePolicy('Policies', this._localData.getToken(), this.policy)
+      .updatePolicy('Policies', this._localData.getToken(), this.policy)
       .subscribe(
         result => {
           if (result === 'ok') {
@@ -152,6 +123,36 @@ export class CreatePolicyComponent implements OnInit {
       );
   }
 
+  addPolicy() {
+    this._policy
+      .savePolicy('Policies', this._localData.getToken(), this.policy)
+      .subscribe(
+        result => {
+          if (result === 'ok') {
+            this.notification.create(
+              'success',
+              'Success!',
+              'Policy was saved'
+            );
+            this.resetPolicyForm();
+          } else {
+            this.notification.create(
+              'error',
+              'Error!',
+              result
+            );
+          }
+        },
+        error => {
+          this.notification.create(
+            'error',
+            'Error!',
+            'Error, please try later!'
+          );
+        },
+      );
+  }
+
   onChangeRisk(risk) {
     if (risk === 4) {
       this.notification.create(
@@ -160,6 +161,10 @@ export class CreatePolicyComponent implements OnInit {
         'High Policy Risk! Please, select a policy coverage under 50%.'
       );
     }
+  }
+
+  resetPolicyForm() {
+    this.policy = new PolicyModel(0, '', '', '', '', '', '', '');
   }
 
 }
